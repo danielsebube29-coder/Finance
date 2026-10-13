@@ -16,32 +16,53 @@ A modern, high-performance, single-page **Finance Management Application** built
 
 ## 🚀 Quick Start Guide
 
-Follow these sequential steps to fire up the application inside **Termux on Android** or any standard Linux terminal environment.
+Follow the sequential steps below matching your operating system or environment to fire up the application.
 
-### 1. Prerequisites
-Ensure you have Node.js installed on your machine:
+### 🔷 Option A: Android (Termux)
+Ensure you have Node.js installed on your machine and launch using the specific WebAssembly module handling required for mobile processor architectures:
 ```bash
-# On Termux
+# 1. Install Node.js if missing
 pkg update && pkg install nodejs -y
 
-# On macOS/Linux
+# 2. Install architecture-safe packages & mobile WASM binders
+npm install --omit=optional
+npm install @rolldown/binding-wasm32-wasi
+
+# 3. Launch the development server
+NODE_OPTIONS="--experimental-wasm-modules" npm run dev
+```
+
+### 🐧 Option B: Linux Terminal (Ubuntu/Debian/Fedora)
+For native Linux environments, standard installations run flawlessly:
+```bash
+# 1. Verify Node.js is installed
 node -v
-```
 
-### 2. Installation
-Install all mandatory structural packages and UI dependencies without overriding configuration frameworks:
-```bash
+# 2. Clean install project packages
 npm install
-```
 
-### 3. Execution
-Launch the development instance. This kicks off the custom internal script setting up global app environments on Port `8080`:
-```bash
+# 3. Launch development server
 npm run dev
 ```
 
-### 4. Viewing the Application
-Once the terminal compiles, local hosting is initiated. Long-press or click the following address to test the app interface live:
+### 🪟 Option C: Windows Command Prompt (CMD)
+For native Windows workflows, follow this sequence inside your workspace directory:
+```cmd
+:: 1. Verify Node.js is installed 
+node -v
+
+:: 2. Clean install project dependencies
+npm install
+
+:: 3. Launch development server
+npm run dev
+```
+
+---
+
+## 📱 Viewing the Application
+Once your specific environment compiles successfully, local hosting is initiated on port `8080`. Click or navigate to the address below in your preferred browser:
+
 👉 **[http://localhost:8080](http://localhost:8080)**
 
 ---
